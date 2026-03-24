@@ -5,6 +5,8 @@
 #include <string>
 #include <fstream>
 #include <sstream>
+#include <algorithm>
+
 using namespace std;
 struct student {
     string name;
@@ -108,7 +110,7 @@ long long IDValidation() {
 }
 
 
-// ============================================================= Start of Function ==============================================================
+// ============================================================= Start of First Function ==============================================================
 
 void ResetPass() {
     string temp_new_password; 
@@ -171,7 +173,29 @@ void ResetPass() {
 
 }
 
-// ============================================================= End of Function ==============================================================
+// ============================================================= End of First Function ==============================================================
+
+
+
+// ============================================================= Start of Second Function ==============================================================
+
+void SearchandFilter(string search_word) {
+    transform(search_word.begin(), search_word.end(), search_word.begin(), ::tolower);  // convert the input to lower case
+    bool isexist = false;
+    for (int i = 0; i < MaxUserIndex; i++) {
+    transform(stud[i].owned_skill.begin(), stud[i].owned_skill.end(), stud[i].owned_skill.begin(), ::tolower);  // convert the owned skill to lower case
+        if (stud[i].owned_skill == search_word) {
+            cout << stud[i].name << " Has " << search_word << " skill and his ID is: " << stud[i].id << endl;
+            isexist = true;
+        }
+    }
+
+    if (!isexist) {
+        cout << "No Students Has This Skill." << endl;
+    }
+}
+
+// ============================================================= End of Second Function ==============================================================
 
 
 
@@ -189,5 +213,5 @@ int main() {
     } CheckFile.close();
 
     FillStruct();
-    ResetPass();
+    SearchandFilter("english");
 }

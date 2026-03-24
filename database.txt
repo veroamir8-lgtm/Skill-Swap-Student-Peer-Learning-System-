@@ -1,2 +1,3 @@
-20251701188|kevin remon|kevinremon1234@gmail.com|12345678|cs|english|programming
-20251700602|kermina ayman|kerminaayman@gmail.com|87654321|cs|programming|english
+20251701188|kevin remon|kevinremon1234@gmail.com|12345678|cs|english|programming|weekdays
+20251700602|kermina ayman|kerminaayman@gmail.com|87654321|cs|english|programming|flexible
+20251700001|bebo emad|bebo@gmail.com|12348765|computer science|programming|english|weekends
