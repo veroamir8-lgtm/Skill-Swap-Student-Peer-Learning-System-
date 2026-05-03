@@ -125,7 +125,6 @@ void profilemanagement() {
 	string myid;
 	int numofcase;
 	string newowned, newwanted, newavailability;
-	cout << "Please enter your id";
 	//while shroot el id string
 	//checks if the id is okay or not and stored in new id var (long long type)
 	long long newid = IDValidation();
@@ -158,6 +157,7 @@ void profilemanagement() {
 				}
 				else {
 					stud[i].owned_skill = newowned;
+					cout << "Updated successfully!\n";
 				}
 				break;
 			case 2:
@@ -178,7 +178,8 @@ void profilemanagement() {
 					cout << "You already have this skill in wanted skill";
 				}
 				else {
-					stud[i].owned_skill = newwanted;
+					stud[i].wanted_skill = newwanted;
+					cout << "Updated successfully!\n";
 				}
 				break;
 			case 3:
@@ -190,8 +191,9 @@ void profilemanagement() {
 				if (newavailability == stud[i].availability) {
 					cout << "This is your old availability status! The new one must be different";
 				}
-				else
+				else{
 					stud[i].availability = newavailability;
+				cout << "Updated successfully!\n";}
 				break;
 			case 4:
 				cout << "the update is cancelled";
@@ -214,7 +216,6 @@ void profilemanagement() {
 			'|' << stud[i].availability << endl;
 	}
 	data_file.close();
-	cout << "Updated successfully!\n";
 }
 
 
